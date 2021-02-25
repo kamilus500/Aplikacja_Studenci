@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="StudenciModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Oceny">
+          <Key>
+            <PropertyRef Name="id_oceny" />
+          </Key>
+          <Property Name="id_oceny" Type="int" Nullable="false" />
+          <Property Name="id_indeks" Type="int" Nullable="false" />
+          <Property Name="ocena" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Student">
+          <Key>
+            <PropertyRef Name="id_indeks" />
+          </Key>
+          <Property Name="id_indeks" Type="int" Nullable="false" />
+          <Property Name="imie" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="nazwisko" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="data_urodzenia" Type="date" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__Oceny__id_indeks__45F365D3">
+          <End Role="Student" Type="Self.Student" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Oceny" Type="Self.Oceny" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Student">
+              <PropertyRef Name="id_indeks" />
+            </Principal>
+            <Dependent Role="Oceny">
+              <PropertyRef Name="id_indeks" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="Show_All" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="Show_Oceny" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="Show_Osoby" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <EntityContainer Name="StudenciModelStoreContainer">
+          <EntitySet Name="Oceny" EntityType="Self.Oceny" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Student" EntityType="Self.Student" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Oceny__id_indeks__45F365D3" Association="Self.FK__Oceny__id_indeks__45F365D3">
+            <End Role="Student" EntitySet="Student" />
+            <End Role="Oceny" EntitySet="Oceny" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="StudenciModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Oceny">
+          <Key>
+            <PropertyRef Name="id_oceny" />
+          </Key>
+          <Property Name="id_oceny" Type="Int32" Nullable="false" />
+          <Property Name="id_indeks" Type="Int32" Nullable="false" />
+          <Property Name="ocena" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Student" Relationship="Self.FK__Oceny__id_indeks__45F365D3" FromRole="Oceny" ToRole="Student" />
+        </EntityType>
+        <EntityType Name="Student">
+          <Key>
+            <PropertyRef Name="id_indeks" />
+          </Key>
+          <Property Name="id_indeks" Type="Int32" Nullable="false" />
+          <Property Name="imie" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nazwisko" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="data_urodzenia" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="Ocenies" Relationship="Self.FK__Oceny__id_indeks__45F365D3" FromRole="Student" ToRole="Oceny" />
+        </EntityType>
+        <Association Name="FK__Oceny__id_indeks__45F365D3">
+          <End Role="Student" Type="Self.Student" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Oceny" Type="Self.Oceny" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Student">
+              <PropertyRef Name="id_indeks" />
+            </Principal>
+            <Dependent Role="Oceny">
+              <PropertyRef Name="id_indeks" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="StudenciEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Ocenies" EntityType="Self.Oceny" />
+          <EntitySet Name="Students" EntityType="Self.Student" />
+          <AssociationSet Name="FK__Oceny__id_indeks__45F365D3" Association="Self.FK__Oceny__id_indeks__45F365D3">
+            <End Role="Student" EntitySet="Students" />
+            <End Role="Oceny" EntitySet="Ocenies" />
+          </AssociationSet>
+          <FunctionImport Name="Show_All" ReturnType="Collection(StudenciModel.Show_All_Result)" />
+          <FunctionImport Name="Show_Oceny" ReturnType="Collection(StudenciModel.Show_Oceny_Result)" />
+          <FunctionImport Name="Show_Osoby" ReturnType="Collection(StudenciModel.Show_Osoby_Result)" />
+        </EntityContainer>
+        <ComplexType Name="Show_All_Result">
+          <Property Type="Int32" Name="Numer_indeksu" Nullable="false" />
+          <Property Type="String" Name="Imie" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="Nazwisko" Nullable="false" MaxLength="20" />
+          <Property Type="DateTime" Name="Data_Urodzenia" Nullable="false" />
+          <Property Type="Int32" Name="Ocena" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="Show_Oceny_Result">
+          <Property Type="Int32" Name="id_oceny" Nullable="false" />
+          <Property Type="Int32" Name="id_indeks" Nullable="false" />
+          <Property Type="Int32" Name="ocena" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="Show_Osoby_Result">
+          <Property Type="Int32" Name="id_indeks" Nullable="false" />
+          <Property Type="String" Name="imie" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="nazwisko" Nullable="false" MaxLength="20" />
+          <Property Type="DateTime" Name="data_urodzenia" Nullable="false" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="StudenciModelStoreContainer" CdmEntityContainer="StudenciEntities">
+          <EntitySetMapping Name="Ocenies">
+            <EntityTypeMapping TypeName="StudenciModel.Oceny">
+              <MappingFragment StoreEntitySet="Oceny">
+                <ScalarProperty Name="id_oceny" ColumnName="id_oceny" />
+                <ScalarProperty Name="id_indeks" ColumnName="id_indeks" />
+                <ScalarProperty Name="ocena" ColumnName="ocena" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Students">
+            <EntityTypeMapping TypeName="StudenciModel.Student">
+              <MappingFragment StoreEntitySet="Student">
+                <ScalarProperty Name="id_indeks" ColumnName="id_indeks" />
+                <ScalarProperty Name="imie" ColumnName="imie" />
+                <ScalarProperty Name="nazwisko" ColumnName="nazwisko" />
+                <ScalarProperty Name="data_urodzenia" ColumnName="data_urodzenia" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="Show_All" FunctionName="StudenciModel.Store.Show_All">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="StudenciModel.Show_All_Result">
+                <ScalarProperty Name="Numer_indeksu" ColumnName="Numer_indeksu" />
+                <ScalarProperty Name="Imie" ColumnName="Imie" />
+                <ScalarProperty Name="Nazwisko" ColumnName="Nazwisko" />
+                <ScalarProperty Name="Data_Urodzenia" ColumnName="Data Urodzenia" />
+                <ScalarProperty Name="Ocena" ColumnName="Ocena" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Show_Oceny" FunctionName="StudenciModel.Store.Show_Oceny">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="StudenciModel.Show_Oceny_Result">
+                <ScalarProperty Name="id_oceny" ColumnName="id_oceny" />
+                <ScalarProperty Name="id_indeks" ColumnName="id_indeks" />
+                <ScalarProperty Name="ocena" ColumnName="ocena" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Show_Osoby" FunctionName="StudenciModel.Store.Show_Osoby">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="StudenciModel.Show_Osoby_Result">
+                <ScalarProperty Name="id_indeks" ColumnName="id_indeks" />
+                <ScalarProperty Name="imie" ColumnName="imie" />
+                <ScalarProperty Name="nazwisko" ColumnName="nazwisko" />
+                <ScalarProperty Name="data_urodzenia" ColumnName="data_urodzenia" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

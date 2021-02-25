@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="StudenciModelStoreContainer" CdmEntityContainer="StudenciEntities">
+    <EntitySetMapping Name="Ocenies">
+      <EntityTypeMapping TypeName="StudenciModel.Oceny">
+        <MappingFragment StoreEntitySet="Oceny">
+          <ScalarProperty Name="id_oceny" ColumnName="id_oceny" />
+          <ScalarProperty Name="id_indeks" ColumnName="id_indeks" />
+          <ScalarProperty Name="ocena" ColumnName="ocena" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Students">
+      <EntityTypeMapping TypeName="StudenciModel.Student">
+        <MappingFragment StoreEntitySet="Student">
+          <ScalarProperty Name="id_indeks" ColumnName="id_indeks" />
+          <ScalarProperty Name="imie" ColumnName="imie" />
+          <ScalarProperty Name="nazwisko" ColumnName="nazwisko" />
+          <ScalarProperty Name="data_urodzenia" ColumnName="data_urodzenia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="Show_All" FunctionName="StudenciModel.Store.Show_All">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="StudenciModel.Show_All_Result">
+          <ScalarProperty Name="Numer_indeksu" ColumnName="Numer_indeksu" />
+          <ScalarProperty Name="Imie" ColumnName="Imie" />
+          <ScalarProperty Name="Nazwisko" ColumnName="Nazwisko" />
+          <ScalarProperty Name="Data_Urodzenia" ColumnName="Data Urodzenia" />
+          <ScalarProperty Name="Ocena" ColumnName="Ocena" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Show_Oceny" FunctionName="StudenciModel.Store.Show_Oceny">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="StudenciModel.Show_Oceny_Result">
+          <ScalarProperty Name="id_oceny" ColumnName="id_oceny" />
+          <ScalarProperty Name="id_indeks" ColumnName="id_indeks" />
+          <ScalarProperty Name="ocena" ColumnName="ocena" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Show_Osoby" FunctionName="StudenciModel.Store.Show_Osoby">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="StudenciModel.Show_Osoby_Result">
+          <ScalarProperty Name="id_indeks" ColumnName="id_indeks" />
+          <ScalarProperty Name="imie" ColumnName="imie" />
+          <ScalarProperty Name="nazwisko" ColumnName="nazwisko" />
+          <ScalarProperty Name="data_urodzenia" ColumnName="data_urodzenia" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

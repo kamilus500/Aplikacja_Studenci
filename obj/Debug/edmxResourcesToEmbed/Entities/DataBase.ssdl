@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="StudenciModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Oceny">
+    <Key>
+      <PropertyRef Name="id_oceny" />
+    </Key>
+    <Property Name="id_oceny" Type="int" Nullable="false" />
+    <Property Name="id_indeks" Type="int" Nullable="false" />
+    <Property Name="ocena" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Student">
+    <Key>
+      <PropertyRef Name="id_indeks" />
+    </Key>
+    <Property Name="id_indeks" Type="int" Nullable="false" />
+    <Property Name="imie" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="nazwisko" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="data_urodzenia" Type="date" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__Oceny__id_indeks__45F365D3">
+    <End Role="Student" Type="Self.Student" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Oceny" Type="Self.Oceny" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Student">
+        <PropertyRef Name="id_indeks" />
+      </Principal>
+      <Dependent Role="Oceny">
+        <PropertyRef Name="id_indeks" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="Show_All" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="Show_Oceny" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="Show_Osoby" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="StudenciModelStoreContainer">
+    <EntitySet Name="Oceny" EntityType="Self.Oceny" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Student" EntityType="Self.Student" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Oceny__id_indeks__45F365D3" Association="Self.FK__Oceny__id_indeks__45F365D3">
+      <End Role="Student" EntitySet="Student" />
+      <End Role="Oceny" EntitySet="Oceny" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
