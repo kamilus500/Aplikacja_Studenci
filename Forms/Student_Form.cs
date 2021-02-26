@@ -20,6 +20,7 @@ namespace ERP_SERWIS.Forms
         private Student studentEdit = new Student();            //student do edycji
         private Student student = new Student();                //student do dodania
         private DataGridView dataGridView;                      //datagridview z mainform
+        private bool IsNull;
 
         #endregion
 
@@ -44,9 +45,11 @@ namespace ERP_SERWIS.Forms
                 txtImieEdit.Text = studentEdit.imie;
                 txtEditNazwisko.Text = studentEdit.nazwisko;
                 datePickerEdit.Value = studentEdit.data_urodzenia;
+                IsNull = false;
             }
             else
             {
+                IsNull = true;
                 txtImieEdit.Text = string.Empty;
                 txtEditNazwisko.Text = string.Empty;
             }
@@ -104,15 +107,21 @@ namespace ERP_SERWIS.Forms
 
         private void btnUsun_Click(object sender, EventArgs e)
         {
-            int _indeks = Convert.ToInt32(dataGridStudent.CurrentRow.Cells[0].Value);
-            student = db.Students.First(x => x.id_indeks == _indeks);
+            if (IsNull == true)
+            {
+                MessageBox.Show("Baza jest pusta");
+            }
+            else
+            {
+                int _indeks = Convert.ToInt32(dataGridStudent.CurrentRow.Cells[0].Value);
+                student = db.Students.First(x => x.id_indeks == _indeks);
 
-            db.Students.Remove(student);
-            db.SaveChanges();
+                db.Students.Remove(student);
+                db.SaveChanges();
 
-            Helper.RefreshDataGrid(dataGridStudent, "student");
-            Helper.RefreshDataGrid(dataGridView, "student");
-            
+                Helper.RefreshDataGrid(dataGridStudent, "student");
+                Helper.RefreshDataGrid(dataGridView, "student");
+            }
         }
         #endregion
 
@@ -120,17 +129,17 @@ namespace ERP_SERWIS.Forms
 
         private void txtImieEdit_TextChanged(object sender, EventArgs e)
         {
-            student.imie = txtImieEdit.Text;
+            studentEdit.imie = txtImieEdit.Text;
         }
 
         private void txtEditNazwisko_TextChanged(object sender, EventArgs e)
         {
-            student.nazwisko = txtEditNazwisko.Text;
+            studentEdit.nazwisko = txtEditNazwisko.Text;
         }
 
         private void datePickerEdit_ValueChanged(object sender, EventArgs e)
         {
-            student.data_urodzenia = datePickerEdit.Value;
+            studentEdit.data_urodzenia = datePickerEdit.Value;
         }
 
         private void btnEdytuj_Click(object sender, EventArgs e)
