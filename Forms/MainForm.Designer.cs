@@ -41,9 +41,12 @@ namespace ERP_SERWIS
             this.loginBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnStudenci = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnUsun = new System.Windows.Forms.Button();
+            this.btnEdytuj = new System.Windows.Forms.Button();
+            this.btnDodaj = new System.Windows.Forms.Button();
             this.btnIntruction = new System.Windows.Forms.Button();
             this.btnOceny = new System.Windows.Forms.Button();
             this.btnInfo = new System.Windows.Forms.Button();
@@ -52,6 +55,7 @@ namespace ERP_SERWIS
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mainDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -160,20 +164,6 @@ namespace ERP_SERWIS
             this.label1.TabIndex = 1;
             this.label1.Text = "    Aplikacja\r\nERP SERWIS";
             // 
-            // btnStudenci
-            // 
-            this.btnStudenci.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnStudenci.Image = ((System.Drawing.Image)(resources.GetObject("btnStudenci.Image")));
-            this.btnStudenci.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnStudenci.Location = new System.Drawing.Point(3, 7);
-            this.btnStudenci.Name = "btnStudenci";
-            this.btnStudenci.Size = new System.Drawing.Size(133, 31);
-            this.btnStudenci.TabIndex = 0;
-            this.btnStudenci.Text = "Student";
-            this.btnStudenci.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnStudenci.UseVisualStyleBackColor = true;
-            this.btnStudenci.Click += new System.EventHandler(this.btnStudenci_Click);
-            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
@@ -192,20 +182,72 @@ namespace ERP_SERWIS
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.groupBox1);
             this.panel2.Controls.Add(this.btnIntruction);
             this.panel2.Controls.Add(this.btnOceny);
             this.panel2.Controls.Add(this.btnInfo);
-            this.panel2.Controls.Add(this.btnStudenci);
             this.panel2.Controls.Add(this.mainDataGrid);
             this.panel2.Location = new System.Drawing.Point(204, 3);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(801, 433);
             this.panel2.TabIndex = 1;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.btnUsun);
+            this.groupBox1.Controls.Add(this.btnEdytuj);
+            this.groupBox1.Controls.Add(this.btnDodaj);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.groupBox1.Location = new System.Drawing.Point(3, -3);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(395, 46);
+            this.groupBox1.TabIndex = 4;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Student";
+            // 
+            // btnUsun
+            // 
+            this.btnUsun.Image = ((System.Drawing.Image)(resources.GetObject("btnUsun.Image")));
+            this.btnUsun.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnUsun.Location = new System.Drawing.Point(283, 12);
+            this.btnUsun.Name = "btnUsun";
+            this.btnUsun.Size = new System.Drawing.Size(100, 28);
+            this.btnUsun.TabIndex = 2;
+            this.btnUsun.Text = "Usuń";
+            this.btnUsun.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUsun.UseVisualStyleBackColor = true;
+            this.btnUsun.Click += new System.EventHandler(this.btnUsun_Click);
+            // 
+            // btnEdytuj
+            // 
+            this.btnEdytuj.Image = ((System.Drawing.Image)(resources.GetObject("btnEdytuj.Image")));
+            this.btnEdytuj.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEdytuj.Location = new System.Drawing.Point(177, 12);
+            this.btnEdytuj.Name = "btnEdytuj";
+            this.btnEdytuj.Size = new System.Drawing.Size(100, 28);
+            this.btnEdytuj.TabIndex = 1;
+            this.btnEdytuj.Text = "Edytuj";
+            this.btnEdytuj.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEdytuj.UseVisualStyleBackColor = true;
+            this.btnEdytuj.Click += new System.EventHandler(this.btnEdytuj_Click);
+            // 
+            // btnDodaj
+            // 
+            this.btnDodaj.Image = ((System.Drawing.Image)(resources.GetObject("btnDodaj.Image")));
+            this.btnDodaj.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDodaj.Location = new System.Drawing.Point(70, 12);
+            this.btnDodaj.Name = "btnDodaj";
+            this.btnDodaj.Size = new System.Drawing.Size(100, 28);
+            this.btnDodaj.TabIndex = 0;
+            this.btnDodaj.Text = "Dodaj";
+            this.btnDodaj.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDodaj.UseVisualStyleBackColor = true;
+            this.btnDodaj.Click += new System.EventHandler(this.btnDodaj_Click);
+            // 
             // btnIntruction
             // 
             this.btnIntruction.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnIntruction.Location = new System.Drawing.Point(578, 7);
+            this.btnIntruction.Location = new System.Drawing.Point(578, 6);
             this.btnIntruction.Name = "btnIntruction";
             this.btnIntruction.Size = new System.Drawing.Size(107, 31);
             this.btnIntruction.TabIndex = 3;
@@ -218,9 +260,9 @@ namespace ERP_SERWIS
             this.btnOceny.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnOceny.Image = ((System.Drawing.Image)(resources.GetObject("btnOceny.Image")));
             this.btnOceny.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnOceny.Location = new System.Drawing.Point(152, 7);
+            this.btnOceny.Location = new System.Drawing.Point(428, 9);
             this.btnOceny.Name = "btnOceny";
-            this.btnOceny.Size = new System.Drawing.Size(133, 31);
+            this.btnOceny.Size = new System.Drawing.Size(100, 28);
             this.btnOceny.TabIndex = 2;
             this.btnOceny.Text = "Oceny";
             this.btnOceny.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -232,7 +274,7 @@ namespace ERP_SERWIS
             this.btnInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnInfo.Image = ((System.Drawing.Image)(resources.GetObject("btnInfo.Image")));
             this.btnInfo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInfo.Location = new System.Drawing.Point(691, 7);
+            this.btnInfo.Location = new System.Drawing.Point(691, 6);
             this.btnInfo.Name = "btnInfo";
             this.btnInfo.Size = new System.Drawing.Size(107, 31);
             this.btnInfo.TabIndex = 1;
@@ -272,6 +314,7 @@ namespace ERP_SERWIS
             this.panel1.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.mainDataGrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -289,7 +332,6 @@ namespace ERP_SERWIS
         private System.Windows.Forms.TextBox loginBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnStudenci;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnInfo;
@@ -297,6 +339,10 @@ namespace ERP_SERWIS
         private System.Windows.Forms.Button btnOceny;
         private System.Windows.Forms.Button btnLogOut;
         private System.Windows.Forms.Button btnIntruction;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button btnUsun;
+        private System.Windows.Forms.Button btnEdytuj;
+        private System.Windows.Forms.Button btnDodaj;
     }
 }
 

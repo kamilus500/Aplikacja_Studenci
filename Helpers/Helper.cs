@@ -26,5 +26,17 @@ namespace ERP_SERWIS.Helpers
 
             dataGridView.Refresh();
         }
+
+        public static bool IsDatabaseNull()
+        {
+            if (db.Students.Count() != 0)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
     }
 }

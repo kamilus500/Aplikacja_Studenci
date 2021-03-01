@@ -88,6 +88,18 @@
     <Compile Include="Entities\Student.cs">
       <DependentUpon>DataBase.tt</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Dodaj_Studenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Dodaj_Studenta.Designer.cs">
+      <DependentUpon>Dodaj_Studenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Edycja_Studenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Edycja_Studenta.Designer.cs">
+      <DependentUpon>Edycja_Studenta.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Instruction_Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,16 +124,22 @@
     <Compile Include="Forms\Oceny_Form.Designer.cs">
       <DependentUpon>Oceny_Form.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Student_Form.cs">
+    <Compile Include="Forms\Usun_Studenta.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Student_Form.Designer.cs">
-      <DependentUpon>Student_Form.cs</DependentUpon>
+    <Compile Include="Forms\Usun_Studenta.Designer.cs">
+      <DependentUpon>Usun_Studenta.cs</DependentUpon>
     </Compile>
     <Compile Include="Helpers\Helper.cs" />
     <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\Dodaj_Studenta.resx">
+      <DependentUpon>Dodaj_Studenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Edycja_Studenta.resx">
+      <DependentUpon>Edycja_Studenta.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Instruction_Form.resx">
       <DependentUpon>Instruction_Form.cs</DependentUpon>
     </EmbeddedResource>
@@ -134,8 +152,8 @@
     <EmbeddedResource Include="Forms\Oceny_Form.resx">
       <DependentUpon>Oceny_Form.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Student_Form.resx">
-      <DependentUpon>Student_Form.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Usun_Studenta.resx">
+      <DependentUpon>Usun_Studenta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

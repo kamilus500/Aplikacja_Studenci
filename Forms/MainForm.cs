@@ -33,7 +33,9 @@ namespace ERP_SERWIS
         {
             mainDataGrid.DataSource = null;
             btnInfo.Enabled = false;
-            btnStudenci.Enabled = false;
+            btnDodaj.Enabled = false;
+            btnEdytuj.Enabled = false;
+            btnUsun.Enabled = false;
             btnOceny.Enabled = false;
             btnIntruction.Enabled = false;
         }
@@ -59,8 +61,10 @@ namespace ERP_SERWIS
                 if (loginModel.Login == "admin" && loginModel.Password == "Admin")
                 {
                     btnOceny.Enabled = true;
-                    btnStudenci.Enabled = true;
+                    btnDodaj.Enabled = true;
                     btnInfo.Enabled = true;
+                    btnUsun.Enabled = true;
+                    btnEdytuj.Enabled = true;
                     btnIntruction.Enabled = true;
 
                     loginModel.IsLogin = true;
@@ -90,10 +94,11 @@ namespace ERP_SERWIS
             loginModel.IsLogin = false;
 
             btnInfo.Enabled = false;
-            btnStudenci.Enabled = false;
+            btnDodaj.Enabled = false;
+            btnEdytuj.Enabled = false;
+            btnUsun.Enabled = false;
             btnOceny.Enabled = false;
             btnIntruction.Enabled = false;
-
 
             mainDataGrid.DataSource = null;
             StatusBar.Text = "Nie zalogowany";
@@ -111,16 +116,6 @@ namespace ERP_SERWIS
             info_Form.ShowDialog();
         }
 
-        private void btnStudenci_Click(object sender, EventArgs e)
-        {
-            DataGridView dataGrid = mainDataGrid;
-
-            Student_Form form = new Student_Form(dataGrid);
-            form.ShowDialog();
-
-            Helper.RefreshDataGrid(mainDataGrid,"All");
-        }
-
         private void btnOceny_Click(object sender, EventArgs e)
         {
             Oceny_Form form = new Oceny_Form(mainDataGrid);
@@ -136,5 +131,30 @@ namespace ERP_SERWIS
         }
 
         #endregion
+
+        private void btnDodaj_Click(object sender, EventArgs e)
+        {
+            Dodaj_Studenta add_Form = new Dodaj_Studenta();
+            add_Form.ShowDialog();
+
+            Helper.RefreshDataGrid(mainDataGrid, "All");
+        }
+
+        private void btnEdytuj_Click(object sender, EventArgs e)
+        {
+            int indeks = Convert.ToInt32(mainDataGrid.CurrentRow.Cells[0].Value);
+            Edycja_Studenta edit_Form = new Edycja_Studenta(indeks);
+            edit_Form.ShowDialog();
+
+            Helper.RefreshDataGrid(mainDataGrid, "All");
+        }
+
+        private void btnUsun_Click(object sender, EventArgs e)
+        {
+            Usun_Studenta remove_Form = new Usun_Studenta(mainDataGrid);
+            remove_Form.ShowDialog();
+
+            Helper.RefreshDataGrid(mainDataGrid, "All");
+        }
     }
 }
