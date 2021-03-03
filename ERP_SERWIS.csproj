@@ -88,23 +88,23 @@
     <Compile Include="Entities\Student.cs">
       <DependentUpon>DataBase.tt</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Dodaj_Studenta.cs">
+    <Compile Include="Forms\DodajStudenta.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Dodaj_Studenta.Designer.cs">
-      <DependentUpon>Dodaj_Studenta.cs</DependentUpon>
+    <Compile Include="Forms\DodajStudenta.Designer.cs">
+      <DependentUpon>DodajStudenta.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Edycja_Studenta.cs">
+    <Compile Include="Forms\EdycjaStudenta.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Edycja_Studenta.Designer.cs">
-      <DependentUpon>Edycja_Studenta.cs</DependentUpon>
+    <Compile Include="Forms\EdycjaStudenta.Designer.cs">
+      <DependentUpon>EdycjaStudenta.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Instruction_Form.cs">
+    <Compile Include="Forms\InstructionForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Instruction_Form.Designer.cs">
-      <DependentUpon>Instruction_Form.cs</DependentUpon>
+    <Compile Include="Forms\InstructionForm.Designer.cs">
+      <DependentUpon>InstructionForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\MainForm.cs">
       <SubType>Form</SubType>
@@ -112,48 +112,48 @@
     <Compile Include="Forms\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Info_Form.cs">
+    <Compile Include="Forms\InfoForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Info_Form.Designer.cs">
-      <DependentUpon>Info_Form.cs</DependentUpon>
+    <Compile Include="Forms\InfoForm.Designer.cs">
+      <DependentUpon>InfoForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Oceny_Form.cs">
+    <Compile Include="Forms\OcenyForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Oceny_Form.Designer.cs">
-      <DependentUpon>Oceny_Form.cs</DependentUpon>
+    <Compile Include="Forms\OcenyForm.Designer.cs">
+      <DependentUpon>OcenyForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Usun_Studenta.cs">
+    <Compile Include="Forms\UsunStudenta.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Usun_Studenta.Designer.cs">
-      <DependentUpon>Usun_Studenta.cs</DependentUpon>
+    <Compile Include="Forms\UsunStudenta.Designer.cs">
+      <DependentUpon>UsunStudenta.cs</DependentUpon>
     </Compile>
     <Compile Include="Helpers\Helper.cs" />
     <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Forms\Dodaj_Studenta.resx">
-      <DependentUpon>Dodaj_Studenta.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\DodajStudenta.resx">
+      <DependentUpon>DodajStudenta.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Edycja_Studenta.resx">
-      <DependentUpon>Edycja_Studenta.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\EdycjaStudenta.resx">
+      <DependentUpon>EdycjaStudenta.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Instruction_Form.resx">
-      <DependentUpon>Instruction_Form.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\InstructionForm.resx">
+      <DependentUpon>InstructionForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Info_Form.resx">
-      <DependentUpon>Info_Form.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\InfoForm.resx">
+      <DependentUpon>InfoForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Oceny_Form.resx">
-      <DependentUpon>Oceny_Form.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\OcenyForm.resx">
+      <DependentUpon>OcenyForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Usun_Studenta.resx">
-      <DependentUpon>Usun_Studenta.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\UsunStudenta.resx">
+      <DependentUpon>UsunStudenta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

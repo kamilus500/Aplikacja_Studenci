@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace ERP_SERWIS.Forms
 {
-    public partial class Instruction_Form : Form
+    public partial class InstructionForm : Form
     {
         #region Ctor
 
-        public Instruction_Form()
+        public InstructionForm()
         {
             InitializeComponent();
         }

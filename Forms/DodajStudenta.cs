@@ -12,38 +12,22 @@ using System.Windows.Forms;
 
 namespace ERP_SERWIS.Forms
 {
-    public partial class Dodaj_Studenta : Form
+    public partial class DodajStudenta : Form
     {
         private StudenciEntities db = new StudenciEntities();
         private Student student = new Student();
         private DataGridView dataGridView = new DataGridView();
-        public Dodaj_Studenta()
+        public DodajStudenta()
         {
             InitializeComponent();
         }
 
-        private void txtImie_TextChanged(object sender, EventArgs e)
-        {
-            student.imie = txtImie.Text;
-        }
-
-        private void txtNazwisko_TextChanged(object sender, EventArgs e)
-        {
-            student.nazwisko = txtNazwisko.Text;
-        }
-
-        private void txtIndex_TextChanged(object sender, EventArgs e)
-        {
-            student.id_indeks = Convert.ToInt32(txtIndex.Text);
-        }
-
-        private void dateTimePicker_ValueChanged(object sender, EventArgs e)
-        {
-            student.data_urodzenia = dateTimePicker.Value;
-        }
-
         private void btnDodaj_Click(object sender, EventArgs e)
         {
+            student.imie = txtImie.Text;
+            student.nazwisko = txtNazwisko.Text;
+            student.id_indeks = Convert.ToInt32(txtIndex.Text);
+            student.data_urodzenia = dateTimePicker.Value;
             student.Ocenies = null;
             db.Students.Add(student);
             db.SaveChanges();

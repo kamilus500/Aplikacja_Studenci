@@ -12,12 +12,12 @@ using System.Windows.Forms;
 
 namespace ERP_SERWIS.Forms
 {
-    public partial class Edycja_Studenta : Form
+    public partial class EdycjaStudenta : Form
     {
         private StudenciEntities db = new StudenciEntities();
         private Student student = new Student();
 
-        public Edycja_Studenta(int indeks)
+        public EdycjaStudenta(int indeks)
         {
             InitializeComponent();
             student = db.Students.First(x => x.id_indeks == indeks);

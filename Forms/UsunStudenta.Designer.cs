@@ -1,7 +1,7 @@
 ﻿
 namespace ERP_SERWIS.Forms
 {
-    partial class Usun_Studenta
+    partial class UsunStudenta
     {
         /// <summary>
         /// Required designer variable.

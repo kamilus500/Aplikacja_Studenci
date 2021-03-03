@@ -12,13 +12,13 @@ using System.Windows.Forms;
 
 namespace ERP_SERWIS.Forms
 {
-    public partial class Usun_Studenta : Form
+    public partial class UsunStudenta : Form
     {
         private StudenciEntities db = new StudenciEntities();
         private Student student = new Student();
         private DataGridView gridView = new DataGridView();
 
-        public Usun_Studenta(DataGridView maindatagrid)
+        public UsunStudenta(DataGridView maindatagrid)
         {
             InitializeComponent();
             gridView = maindatagrid;

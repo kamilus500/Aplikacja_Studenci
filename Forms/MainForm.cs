@@ -31,6 +31,7 @@ namespace ERP_SERWIS
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            PasswordBox.PasswordChar = '*';
             mainDataGrid.DataSource = null;
             btnInfo.Enabled = false;
             btnDodaj.Enabled = false;
@@ -112,13 +113,13 @@ namespace ERP_SERWIS
         private void btnInfo_Click(object sender, EventArgs e)
         {
 
-            Info_Form info_Form = new Info_Form();
+            InfoForm info_Form = new InfoForm();
             info_Form.ShowDialog();
         }
 
         private void btnOceny_Click(object sender, EventArgs e)
         {
-            Oceny_Form form = new Oceny_Form(mainDataGrid);
+            OcenyForm form = new OcenyForm(mainDataGrid);
             form.ShowDialog();
 
             Helper.RefreshDataGrid(mainDataGrid,"All");
@@ -126,15 +127,13 @@ namespace ERP_SERWIS
 
         private void btnIntruction_Click(object sender, EventArgs e)
         {
-            Instruction_Form form = new Instruction_Form();
+            InstructionForm form = new InstructionForm();
             form.ShowDialog();
         }
 
-        #endregion
-
         private void btnDodaj_Click(object sender, EventArgs e)
         {
-            Dodaj_Studenta add_Form = new Dodaj_Studenta();
+            DodajStudenta add_Form = new DodajStudenta();
             add_Form.ShowDialog();
 
             Helper.RefreshDataGrid(mainDataGrid, "All");
@@ -143,7 +142,7 @@ namespace ERP_SERWIS
         private void btnEdytuj_Click(object sender, EventArgs e)
         {
             int indeks = Convert.ToInt32(mainDataGrid.CurrentRow.Cells[0].Value);
-            Edycja_Studenta edit_Form = new Edycja_Studenta(indeks);
+            EdycjaStudenta edit_Form = new EdycjaStudenta(indeks);
             edit_Form.ShowDialog();
 
             Helper.RefreshDataGrid(mainDataGrid, "All");
@@ -151,10 +150,13 @@ namespace ERP_SERWIS
 
         private void btnUsun_Click(object sender, EventArgs e)
         {
-            Usun_Studenta remove_Form = new Usun_Studenta(mainDataGrid);
+            UsunStudenta remove_Form = new UsunStudenta(mainDataGrid);
             remove_Form.ShowDialog();
 
             Helper.RefreshDataGrid(mainDataGrid, "All");
         }
+
+
+        #endregion
     }
 }

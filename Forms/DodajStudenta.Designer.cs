@@ -1,7 +1,7 @@
 ﻿
 namespace ERP_SERWIS.Forms
 {
-    partial class Dodaj_Studenta
+    partial class DodajStudenta
     {
         /// <summary>
         /// Required designer variable.
@@ -68,7 +68,6 @@ namespace ERP_SERWIS.Forms
             this.dateTimePicker.Name = "dateTimePicker";
             this.dateTimePicker.Size = new System.Drawing.Size(215, 20);
             this.dateTimePicker.TabIndex = 9;
-            this.dateTimePicker.ValueChanged += new System.EventHandler(this.dateTimePicker_ValueChanged);
             // 
             // btnDodaj
             // 
@@ -95,7 +94,6 @@ namespace ERP_SERWIS.Forms
             this.txtNazwisko.Name = "txtNazwisko";
             this.txtNazwisko.Size = new System.Drawing.Size(215, 26);
             this.txtNazwisko.TabIndex = 5;
-            this.txtNazwisko.TextChanged += new System.EventHandler(this.txtNazwisko_TextChanged);
             // 
             // label3
             // 
@@ -112,7 +110,6 @@ namespace ERP_SERWIS.Forms
             this.txtIndex.Name = "txtIndex";
             this.txtIndex.Size = new System.Drawing.Size(215, 26);
             this.txtIndex.TabIndex = 3;
-            this.txtIndex.TextChanged += new System.EventHandler(this.txtIndex_TextChanged);
             // 
             // label2
             // 
@@ -129,7 +126,6 @@ namespace ERP_SERWIS.Forms
             this.txtImie.Name = "txtImie";
             this.txtImie.Size = new System.Drawing.Size(215, 26);
             this.txtImie.TabIndex = 1;
-            this.txtImie.TextChanged += new System.EventHandler(this.txtImie_TextChanged);
             // 
             // label1
             // 
@@ -140,13 +136,13 @@ namespace ERP_SERWIS.Forms
             this.label1.TabIndex = 0;
             this.label1.Text = "Imie";
             // 
-            // Dodaj_Studenta
+            // DodajStudenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(259, 401);
             this.Controls.Add(this.groupBox1);
-            this.Name = "Dodaj_Studenta";
+            this.Name = "DodajStudenta";
             this.Text = "Dodaj_Studenta";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

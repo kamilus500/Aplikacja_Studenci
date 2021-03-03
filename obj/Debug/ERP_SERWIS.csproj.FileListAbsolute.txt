@@ -13,9 +13,9 @@ C:\Users\LanowY\Desktop\c#\Erp_Serwis\ERP_SERWIS\bin\Debug\EntityFramework.SqlSe
 C:\Users\LanowY\Desktop\c#\Erp_Serwis\ERP_SERWIS\bin\Debug\EntityFramework.xml
 C:\Users\LanowY\Desktop\c#\Erp_Serwis\ERP_SERWIS\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\LanowY\Desktop\c#\Erp_Serwis\ERP_SERWIS\obj\Debug\ERP_SERWIS.csproj.CopyComplete
-C:\Users\LanowY\Desktop\c#\Erp_Serwis\ERP_SERWIS\obj\Debug\ERP_SERWIS.Forms.Info_Form.resources
-C:\Users\LanowY\Desktop\c#\Erp_Serwis\ERP_SERWIS\obj\Debug\ERP_SERWIS.Forms.Instruction_Form.resources
-C:\Users\LanowY\Desktop\c#\Erp_Serwis\ERP_SERWIS\obj\Debug\ERP_SERWIS.Forms.Oceny_Form.resources
-C:\Users\LanowY\Desktop\c#\Erp_Serwis\ERP_SERWIS\obj\Debug\ERP_SERWIS.Forms.Dodaj_Studenta.resources
-C:\Users\LanowY\Desktop\c#\Erp_Serwis\ERP_SERWIS\obj\Debug\ERP_SERWIS.Forms.Edycja_Studenta.resources
-C:\Users\LanowY\Desktop\c#\Erp_Serwis\ERP_SERWIS\obj\Debug\ERP_SERWIS.Forms.Usun_Studenta.resources
+C:\Users\LanowY\Desktop\c#\Erp_Serwis\ERP_SERWIS\obj\Debug\ERP_SERWIS.Forms.DodajStudenta.resources
+C:\Users\LanowY\Desktop\c#\Erp_Serwis\ERP_SERWIS\obj\Debug\ERP_SERWIS.Forms.EdycjaStudenta.resources
+C:\Users\LanowY\Desktop\c#\Erp_Serwis\ERP_SERWIS\obj\Debug\ERP_SERWIS.Forms.InstructionForm.resources
+C:\Users\LanowY\Desktop\c#\Erp_Serwis\ERP_SERWIS\obj\Debug\ERP_SERWIS.Forms.InfoForm.resources
+C:\Users\LanowY\Desktop\c#\Erp_Serwis\ERP_SERWIS\obj\Debug\ERP_SERWIS.Forms.OcenyForm.resources
+C:\Users\LanowY\Desktop\c#\Erp_Serwis\ERP_SERWIS\obj\Debug\ERP_SERWIS.Forms.UsunStudenta.resources

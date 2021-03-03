@@ -1,7 +1,7 @@
 ﻿
 namespace ERP_SERWIS.Forms
 {
-    partial class Info_Form
+    partial class InfoForm
     {
         /// <summary>
         /// Required designer variable.

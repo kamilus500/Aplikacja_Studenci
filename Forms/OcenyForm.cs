@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace ERP_SERWIS.Forms
 {
-    public partial class Oceny_Form : Form
+    public partial class OcenyForm : Form
     {
         #region Models
 
@@ -25,7 +25,7 @@ namespace ERP_SERWIS.Forms
 
         #region Ctor
 
-        public Oceny_Form(DataGridView dataGrid)
+        public OcenyForm(DataGridView dataGrid)
         {
             InitializeComponent();
             dataGridView = dataGrid;
@@ -53,21 +53,27 @@ namespace ERP_SERWIS.Forms
             }
             else
             {
+                if (!Helper.IsDatabaseNull())
+                {
+                    int numer = Convert.ToInt32(dataGridOceny.CurrentRow.Index);
+                    int _id_Studenta = Convert.ToInt32(dataGridOceny.Rows[numer].Cells[0].Value);
+                    int _id_Oceny = db.Ocenies.Count();
 
-                int numer = Convert.ToInt32(dataGridOceny.CurrentRow.Index);
-                int _id_Studenta = Convert.ToInt32(dataGridOceny.Rows[numer].Cells[0].Value);
-                int _id_Oceny = db.Ocenies.Count();
+                    student = db.Students.First(x => x.id_indeks == _id_Studenta);
 
-                student = db.Students.First(x => x.id_indeks == _id_Studenta);
+                    ocena.id_indeks = student.id_indeks;
+                    ocena.id_oceny = _id_Oceny + 1;
+                    student.Ocenies.Add(ocena);
 
-                ocena.id_indeks = student.id_indeks;
-                ocena.id_oceny = _id_Oceny + 1;
-                student.Ocenies.Add(ocena);
+                    db.SaveChanges();
+                    this.Close();
 
-                db.SaveChanges();
-                this.Close();
-
-                Helper.RefreshDataGrid(dataGridView, "All");
+                    Helper.RefreshDataGrid(dataGridView, "All");
+                }
+                else
+                {
+                    MessageBox.Show("Nie można dodać oceny. Nie ma żadnego studenta w bazie");
+                }
             }
         }
 

@@ -1,7 +1,7 @@
 ﻿
 namespace ERP_SERWIS.Forms
 {
-    partial class Oceny_Form
+    partial class OcenyForm
     {
         /// <summary>
         /// Required designer variable.
